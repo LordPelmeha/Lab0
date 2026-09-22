@@ -7,9 +7,11 @@ function leftRiemannSum(f, a, b, n) {
     return sum * dx;
 }
 
-const a = parseFloat(prompt("Enter a:"));
-const b = parseFloat(prompt("Enter b:"));
-const n = 1000;
-
+let a = parseFloat(prompt("Введите a:"));
+let b = parseFloat(prompt("Введите b:"));
+const n = 100000;
+if (a > b) {
+    [a, b] = [b, a]
+}
 const result = leftRiemannSum(x => x * Math.cos(x), a, b, n);
-alert("Left Riemann sum of x*cos(x) from " + a + " to " + b + " (n=" + n + "): " + result);
+alert("Левая сумма римана x*cos(x) от " + a + " до " + b + " (n=" + n + "): " + result);
